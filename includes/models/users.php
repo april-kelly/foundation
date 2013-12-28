@@ -39,7 +39,7 @@ class users {
         $this->username = $username;
         $this->password = $password;
 
-        //Setup databasea connection
+        //Setup database connection
         $dbc = new db;
         $dbc->connect();
 

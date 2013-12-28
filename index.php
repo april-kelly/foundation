@@ -22,7 +22,7 @@ $set = new settings;
 $settings = $set->fetch();
 
 //Get the user's page request
-if(isset($_REQUEST['p'])){
+if(isset($_REQUEST['p']) && !(empty($_REQUEST['p']))){
     $request = $_REQUEST['p'];
 }else{
     $request = 'home';
@@ -44,6 +44,7 @@ $request = $dbc->sanitize($request);
 
 //Look up the page being requested
 $query = "SELECT * FROM pages WHERE `name` = '".$request."'";
+echo $query;
 $pages = $dbc->query($query);
 var_dump($pages);
 
