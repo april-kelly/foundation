@@ -11,6 +11,7 @@
 require_once('./path.php');
 require_once(ABSPATH.'includes/models/settings.php');
 require_once(ABSPATH.'includes/models/data.php');
+require_once(ABSPATH.'includes/models/users.php');
 
 //Start the user's session
 if(!(isset($_SESSION))){
@@ -44,12 +45,39 @@ $request = $dbc->sanitize($request);
 
 //Look up the page being requested
 $query = "SELECT * FROM pages WHERE `name` = '".$request."'";
-echo $query;
 $pages = $dbc->query($query);
-var_dump($pages);
+
+//Debug
+//var_dump($pages);
 
 //Force loading of the first result
 $page = $pages[0];
 
-//Include the page
-include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/menus/status.php');
+//Check the user's clearance
+$users = new users();
+$auth = $users->clearance_check('0', '0');
+
+//Start output buffering
+ob_start();
+
+    //Verify user is cleared to see the requested page
+    if($auth == true){
+
+        //Include the requested page
+        include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/menus/status.php');
+
+    }else{
+
+        //DO NOT include the requested page
+
+        //[error-message-page-here]
+        echo 'Unauthorized';
+
+    }
+
+//Conclude output buffer
+$ob = ob_get_contents();
+ob_end_clean();
+
+//Send user the page
+echo $ob;

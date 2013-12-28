@@ -83,6 +83,49 @@ class users {
 
     }
 
+    public function clearance_check($user_id, $group_id){
+
+
+        //Setup database connection
+        $dbc = new db;
+        $dbc->connect();
+
+        //Sanitize inputs
+        $user_id = $dbc->sanitize($user_id);
+        $group_id = $dbc->sanitize($group_id);
+
+        //look for user in database
+        $query = "SELECT * FROM  `users-groups` WHERE  `user_id` = '".$user_id."' AND  `group_id` = '".$group_id."'";
+        echo $query;
+        $results = $dbc->query($query);
+
+        //Make sure the database returned good results
+        if(isset($results[0]['user_id'])){
+
+            //Count rows returned
+            if(count($results) == '1'){
+
+                //Cleared
+                return true;
+
+            }else{
+
+                //SPY!?!
+                return false;
+
+            }
+
+        }else{
+
+            //Bad login or error message
+            return false;
+
+        }
+
+
+
+    }
+
     //Update function
     public function update(){
 
