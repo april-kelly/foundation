@@ -45,9 +45,10 @@ $request = $dbc->sanitize($request);
 //Look up the page being requested
 $query = "SELECT * FROM pages WHERE `name` = '".$request."'";
 $pages = $dbc->query($query);
+var_dump($pages);
 
 //Force loading of the first result
 $page = $pages[0];
 
 //Include the page
-include_once(ABSPATH.'includes/views/'.$page['view']);
+include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/menus/status.php');

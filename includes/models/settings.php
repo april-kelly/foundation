@@ -12,15 +12,24 @@ if(!(defined('ABSPATH'))){
 
 class settings {
 
-    //About
-    public $product_name                  =   'Foundation Framework';
-    public $version                       =   '0.0.1'; //Define the software version number
-    public $version_type                  =   'pre-alpha'; //Defines the type of release alpha, beta etc
+    //About (put your product's info here)
+    public $product_name                            =   '';   //Your product name here
+    public $version                                 =   '';   //Your version here
+    public $version_type                            =   '';   //Your version type here
+
+    //About Foundation Framework
+    public $foundation_product_name                 =   'Foundation Framework';    //Defines the name of the foundation framework
+    public $foundation_version                      =   '0.0.1';                   //Defines the foundation framework version
+    public $foundation_version_type                 =   'pre-alpha';               //Defines the foundation type of release alpha, beta etc
 
     //Settings Definitions
-    public $settings_path                 =   ''; //Defined in the constructor
-    public $settings_filename             =   'settings.json';
+    public $settings_path                           =   '';                        //Defines where the settings are stored (defined in the constructor)
+    public $settings_filename                       =   'settings.json';           //Name of the settings save file
 
+    //General Settings
+    public $mlp                                     =   "\x61\x77\x65\x73\x6F\x6d\x65";   //Deal with it, ponies are awesome
+    public $ponify                                  =   false;                     //Ponifys the application if implemented
+    public $theme                                   =   'default';                 //Sets the theme
 
     //Constructor
     public function __construct(){
