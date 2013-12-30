@@ -55,7 +55,9 @@ $page = $pages[0];
 
 //Check the user's clearance
 $users = new users();
-$auth = $users->clearance_check($_SESSION['user_id'], '');
+//$auth = $users->clearance_check($_SESSION['user_id'], '');
+
+$auth = false;
 
 //Start output buffering
 ob_start();
@@ -70,8 +72,8 @@ ob_start();
 
         //DO NOT include the requested page
 
-        //[error-message-page-here]
-        echo 'Unauthorized';
+        //Use, the 403 page instead
+        include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/errors/403.php');
 
     }
 
