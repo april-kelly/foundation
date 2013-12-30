@@ -55,7 +55,7 @@ $page = $pages[0];
 
 //Check the user's clearance
 $users = new users();
-$auth = $users->clearance_check('0', '0');
+$auth = $users->clearance_check($_SESSION['user_id'], '');
 
 //Start output buffering
 ob_start();
