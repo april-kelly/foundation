@@ -29,7 +29,19 @@ if(isset($_REQUEST['p']) && !(empty($_REQUEST['p']))){
     $request = 'home';
 }
 
+//Run system plugins
+include_once(ABSPATH.'/includes/controllers/launch_system_plugins.php');
+
+
 //Run any optional plugins
+if($settings['plugins'] == true){
+
+    include_once(ABSPATH.'/includes/controllers/launch_optional_plugins.php');
+
+}
+
+
+
 
 /**
  * The run plugins feature has not been implemented yet
@@ -47,9 +59,6 @@ $request = $dbc->sanitize($request);
 $query = "SELECT * FROM pages WHERE `name` = '".$request."'";
 $pages = $dbc->query($query);
 
-//Debug
-//var_dump($pages);
-
 //Force loading of the first result
 $page = $pages[0];
 
@@ -57,7 +66,7 @@ $page = $pages[0];
 $users = new users();
 //$auth = $users->clearance_check($_SESSION['user_id'], '');
 
-$auth = false;
+$auth = true;
 
 //Start output buffering
 ob_start();
@@ -65,8 +74,20 @@ ob_start();
     //Verify user is cleared to see the requested page
     if($auth == true){
 
-        //Include the requested page
-        include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/menus/status.php');
+        //Make sure the page's path is valid
+        if(isset($page['path']) && file_exists(ABSPATH.'includes/views/themes/'.$settings['theme'].'/'.$page['path'])){
+
+            //Include the requested page
+            include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/'.$page['path']);
+
+        }else{
+
+            //Page does not exist or database error
+
+            //Use, the 404 page instead
+            include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/errors/404.php');
+
+        }
 
     }else{
 
