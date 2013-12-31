@@ -44,19 +44,6 @@ if($settings['plugins'] == true){
 
 }
 
-//Establish a connection with the database
-$dbc->connect();
-
-//Sanitize inputs
-$request = $dbc->sanitize($request);
-
-//Look up the page being requested
-$query = "SELECT * FROM pages WHERE `name` = '".$request."'";
-$pages = $dbc->query($query);
-
-//Force loading of the first result
-$page = $pages[0];
-
 //Check the user's clearance
 //$auth = $users->clearance_check($_SESSION['user_id'], '');
 
