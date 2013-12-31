@@ -26,11 +26,21 @@ class pages{
 
 
     //Constructor
-    public function __construct(){
+    public function __construct($dbc = null){
 
-        //Establish a connection with the database
-        $this->dbc = new db;
-        $this->dbc->connect();
+        //Check to see if we have been passed a database object to use
+        if(!(is_null($dbc))){
+
+            //Object passed
+            $this->dbc = $dbc;
+
+        }else{
+
+            //No Object Passed
+            $this->dbc = new db;
+            $this->dbc->connect();
+
+        }
 
     }
 

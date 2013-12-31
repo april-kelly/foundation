@@ -25,6 +25,14 @@ class db {
         //mysqli object
         public $dbc;
 
+    //Constructor
+    public function __construct(){
+
+        //Auto connect
+        $this->connect();
+
+    }
+
     //Connect function
     public function connect(){
 
@@ -101,6 +109,13 @@ class db {
             return false; //no connection existed
 
         }
+
+    }
+
+    public function __destruct(){
+
+        //Auto destroy
+        $this->close();
 
     }
 
