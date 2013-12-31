@@ -18,8 +18,12 @@ if(!(isset($_SESSION))){
     session_start();
 }
 
-//Fetch the settings
+//Setup system classes
 $set = new settings;
+$dbc = new db;
+$users = new users();
+
+//Fetch the settings
 $settings = $set->fetch();
 
 //Get the user's page request
@@ -40,16 +44,7 @@ if($settings['plugins'] == true){
 
 }
 
-
-
-
-/**
- * The run plugins feature has not been implemented yet
- * @TODO add run plugins support
- */
-
 //Establish a connection with the database
-$dbc = new db;
 $dbc->connect();
 
 //Sanitize inputs
@@ -63,7 +58,6 @@ $pages = $dbc->query($query);
 $page = $pages[0];
 
 //Check the user's clearance
-$users = new users();
 //$auth = $users->clearance_check($_SESSION['user_id'], '');
 
 $auth = true;
