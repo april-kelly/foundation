@@ -5,14 +5,14 @@
     <ignored path="foundation.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/.htpasswd" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1387920738731" ignored="false" />
-    <file path="/index.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388386547582" ignored="false" />
+    <file path="/index.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388459758312" ignored="false" />
     <file path="/settings.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388386989638" ignored="false" />
     <file path="/status.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388202636668" ignored="false" />
-    <file path="/users.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388204207723" ignored="false" />
+    <file path="/users.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388460143739" ignored="false" />
     <file path="/.htaccess" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388384900002" ignored="false" />
     <file path="/403.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388384076258" ignored="false" />
     <file path="/404.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388385032866" ignored="false" />
-    <file path="/main.template.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388385711930" ignored="false" />
+    <file path="/main.template.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388459783290" ignored="false" />
     <file path="/test_hook.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388386180889" ignored="false" />
     <file path="/launch_plugins.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388386381227" ignored="false" />
     <file path="/test_system_hook.php" changelist="eacab286-4970-4b01-8fb8-6edf1b653228" time="1388387067780" ignored="false" />
@@ -39,7 +39,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="1" selection-start="928" selection-end="928" vertical-scroll-proportion="-7.769231">
+            <state line="27" column="25" selection-start="644" selection-end="644" vertical-scroll-proportion="-17.653847">
               <folding>
                 <element signature="e#7#136#0" expanded="true" />
               </folding>
@@ -47,10 +47,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="users.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/models/users.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="0" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.18590705">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="0.052473765">
+            <state line="25" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="-1.3461539">
               <folding>
                 <element signature="e#6#146#0" expanded="true" />
               </folding>
@@ -70,20 +79,20 @@
       <list>
         <option value="$PROJECT_DIR$/includes/views/main.template.php" />
         <option value="$PROJECT_DIR$/includes/views/themes/default/menus/status.php" />
-        <option value="$PROJECT_DIR$/includes/models/users.php" />
         <option value="$PROJECT_DIR$/includes/views/themes/default/errors/404.html" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/includes/views/themes/default/errors/403.php" />
         <option value="$PROJECT_DIR$/includes/views/themes/default/errors/404.php" />
-        <option value="$PROJECT_DIR$/includes/views/themes/default/main.template.php" />
         <option value="$PROJECT_DIR$/includes/hooks/test_hook.php" />
         <option value="$PROJECT_DIR$/includes/controllers/launch_plugins.php" />
         <option value="$PROJECT_DIR$/includes/controllers/launch_system_plugins.php" />
         <option value="$PROJECT_DIR$/includes/models/settings.php" />
         <option value="$PROJECT_DIR$/includes/controllers/launch_optional_plugins.php" />
         <option value="$PROJECT_DIR$/includes/hooks/system/test_system_hook.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/models/pages.php" />
+        <option value="$PROJECT_DIR$/includes/views/themes/default/main.template.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/includes/models/users.php" />
       </list>
     </option>
   </component>
@@ -313,13 +322,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/models/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="442" selection-end="442" vertical-scroll-proportion="-9.153846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/date.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="292" column="26" selection-start="7764" selection-end="7764" vertical-scroll-proportion="0.47553515">
@@ -333,13 +335,6 @@
           <folding>
             <element signature="e#6#139#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/models/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="46" selection-start="2588" selection-end="2588" vertical-scroll-proportion="0.27436283">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -365,13 +360,6 @@
           <folding>
             <element signature="e#6#99#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/views/themes/default/main.template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -409,13 +397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/models/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="34" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.89205396">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/hooks/optional/test_hook.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="26" selection-start="127" selection-end="127" vertical-scroll-proportion="0.20389806">
@@ -425,21 +406,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="-1.3461539">
+          <folding>
+            <element signature="e#6#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/views/themes/default/main.template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/models/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="34" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.928036">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/models/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="41" selection-start="442" selection-end="442" vertical-scroll-proportion="0.43328336">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="1" selection-start="928" selection-end="928" vertical-scroll-proportion="-7.769231">
+        <state line="27" column="25" selection-start="644" selection-end="644" vertical-scroll-proportion="-17.653847">
           <folding>
             <element signature="e#7#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
+    <entry file="file://$PROJECT_DIR$/includes/models/users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="444" selection-end="444" vertical-scroll-proportion="0.052473765">
-          <folding>
-            <element signature="e#6#146#0" expanded="true" />
-          </folding>
+        <state line="53" column="0" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.18590705">
+          <folding />
         </state>
       </provider>
     </entry>

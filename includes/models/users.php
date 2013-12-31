@@ -28,6 +28,26 @@ class users {
 
         //Control variables
             public $debug       = true;
+            public $dbc         = null;
+
+    //Constructor
+    public function __construct($dbc = null){
+
+        //Check to see if we have been passed a database object to use
+        if(!(is_null($dbc))){
+
+            //Object passed
+            $this->dbc = $dbc;
+
+        }else{
+
+            //No Object Passed
+            $this->dbc = new db;
+            $this->dbc->connect();
+
+        }
+
+    }
 
     //Login function
     public function login($username, $password){
@@ -39,17 +59,13 @@ class users {
         $this->username = $username;
         $this->password = $password;
 
-        //Setup database connection
-        $dbc = new db;
-        $dbc->connect();
-
         //sanitize inputs
-        //$this->username = $dbc->sanitize($this->username);
+        //$this->username = $this->dbc->sanitize($this->username);
         $this->password = hash('SHA512', $this->password);
 
         //look for user in database
         $query = "SELECT * FROM users WHERE `username` = '".$this->username."' AND `password` = '".$this->password."'";
-        $results = $dbc->query($query);
+        $results = $this->dbc->query($query);
 
         //Make sure the database returned good results
         if(isset($results[0][0]['index'])){
@@ -85,19 +101,14 @@ class users {
 
     public function clearance_check($user_id, $group_id){
 
-
-        //Setup database connection
-        $dbc = new db;
-        $dbc->connect();
-
         //Sanitize inputs
-        $user_id = $dbc->sanitize($user_id);
-        $group_id = $dbc->sanitize($group_id);
+        $user_id  = $this->dbc->sanitize($user_id);
+        $group_id = $this->dbc->sanitize($group_id);
 
         //look for user in database
         $query = "SELECT * FROM  `users-groups` WHERE  `user_id` = '".$user_id."' AND  `group_id` = '".$group_id."'";
         echo $query;
-        $results = $dbc->query($query);
+        $results = $this->dbc->query($query);
 
         //Make sure the database returned good results
         if(isset($results[0]['user_id'])){

@@ -9,19 +9,23 @@
 
 //Includes
 require_once('./path.php');
-require_once(ABSPATH.'includes/models/settings.php');
 require_once(ABSPATH.'includes/models/data.php');
+require_once(ABSPATH.'includes/models/settings.php');
 require_once(ABSPATH.'includes/models/users.php');
+require_once(ABSPATH.'includes/models/pages.php');
 
 //Start the user's session
 if(!(isset($_SESSION))){
     session_start();
 }
 
-//Setup system classes
-$set = new settings;
-$dbc = new db;
-$users = new users();
+//Setup the non database requiring system classes
+$set   = new settings;
+$dbc   = new db;
+
+//Setup up the database dependant classes
+$users = new users($dbc);
+$pages = new pages($dbc);
 
 //Fetch the settings
 $settings = $set->fetch();
@@ -34,15 +38,18 @@ if(isset($_REQUEST['p']) && !(empty($_REQUEST['p']))){
 }
 
 //Run system plugins
-include_once(ABSPATH.'/includes/controllers/launch_system_plugins.php');
+include_once(ABSPATH.'includes/controllers/launch_system_plugins.php');
 
 
 //Run any optional plugins
 if($settings['plugins'] == true){
 
-    include_once(ABSPATH.'/includes/controllers/launch_optional_plugins.php');
+    include_once(ABSPATH.'includes/controllers/launch_optional_plugins.php');
 
 }
+
+//Look up the page
+$page = $pages->lookup($request);
 
 //Check the user's clearance
 //$auth = $users->clearance_check($_SESSION['user_id'], '');
