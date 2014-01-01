@@ -55,9 +55,7 @@ if($settings['plugins'] == true){
 //Look up the page
 $page = $pages->lookup($request);
 
-$groups->add_group('Pegasi', 'Ponies but with wings');
-$groups->update_group('3', null, 'Ponies but with wings.');
-$groups->delete_group('2');
+$groups->add_user('0', '3');
 
 $debug->dump();
 

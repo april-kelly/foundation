@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="27" selection-start="1427" selection-end="1427" vertical-scroll-proportion="-10.346154" vertical-offset="649" max-vertical-offset="1785">
+            <state line="57" column="25" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.3381295" vertical-offset="649" max-vertical-offset="1751">
               <folding />
             </state>
           </provider>
@@ -41,32 +41,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="873" selection-end="933" vertical-scroll-proportion="-9.153846" vertical-offset="459" max-vertical-offset="3842">
-              <folding>
-                <marker date="1388559759555" expanded="true" signature="1080:1120" placeholder="SELECT * FRO..pages..." />
-                <marker date="1388559759555" expanded="true" signature="2375:2423" placeholder="INSERT INTO ..." />
-                <marker date="1388559759555" expanded="true" signature="3657:3684" placeholder="UPDATE pages..." />
-                <marker date="1388559759555" expanded="true" signature="3657:3731" placeholder="UPDATE pages..." />
-                <marker date="1388559759555" expanded="true" signature="4778:4822" placeholder="DELETE FROM ..." />
-                <marker date="1388559759555" expanded="true" signature="4784:4815" placeholder="SELECT * FRO..pages..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="groups.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="groups.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/models/groups.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="33" selection-start="3827" selection-end="3827" vertical-scroll-proportion="-0.66330934" vertical-offset="3096" max-vertical-offset="3791">
+            <state line="231" column="14" selection-start="5948" selection-end="5948" vertical-scroll-proportion="-11.730769" vertical-offset="3622" max-vertical-offset="4488">
               <folding>
                 <element signature="e#6#150#0" expanded="true" />
-                <marker date="1388560230867" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
-                <marker date="1388560230867" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
-                <marker date="1388560230867" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
-                <marker date="1388560230867" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
+                <marker date="1388561243346" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
+                <marker date="1388561243346" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
+                <marker date="1388561243346" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
+                <marker date="1388561243346" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
+                <marker date="1388561243346" expanded="true" signature="5670:5724" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -201,7 +186,7 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistory" value="/" />
+    <property name="SearchEverywhereHistory" value="&#10;/" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -353,6 +338,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="5" selection-start="3336" selection-end="3336" vertical-scroll-proportion="0.9784173" vertical-offset="1564" max-vertical-offset="3842">
+          <folding>
+            <marker date="1388559759555" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..pages..." />
+            <marker date="1388559759555" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1388559759555" expanded="true" signature="-1:-1" placeholder="UPDATE pages..." />
+            <marker date="1388559759555" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/models/settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="102" selection-start="1829" selection-end="1829" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1785">
@@ -360,37 +357,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
+    <entry file="file://$PROJECT_DIR$/includes/models/groups.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="873" selection-end="933" vertical-scroll-proportion="-9.153846" vertical-offset="459" max-vertical-offset="3842">
+        <state line="231" column="14" selection-start="5948" selection-end="5948" vertical-scroll-proportion="-11.730769" vertical-offset="3622" max-vertical-offset="4488">
           <folding>
-            <marker date="1388559759555" expanded="true" signature="1080:1120" placeholder="SELECT * FRO..pages..." />
-            <marker date="1388559759555" expanded="true" signature="2375:2423" placeholder="INSERT INTO ..." />
-            <marker date="1388559759555" expanded="true" signature="3657:3684" placeholder="UPDATE pages..." />
-            <marker date="1388559759555" expanded="true" signature="3657:3731" placeholder="UPDATE pages..." />
-            <marker date="1388559759555" expanded="true" signature="4778:4822" placeholder="DELETE FROM ..." />
-            <marker date="1388559759555" expanded="true" signature="4784:4815" placeholder="SELECT * FRO..pages..." />
+            <element signature="e#6#150#0" expanded="true" />
+            <marker date="1388561243346" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
+            <marker date="1388561243346" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
+            <marker date="1388561243346" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
+            <marker date="1388561243346" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
+            <marker date="1388561243346" expanded="true" signature="5670:5724" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="27" selection-start="1427" selection-end="1427" vertical-scroll-proportion="-10.346154" vertical-offset="649" max-vertical-offset="1785">
+        <state line="57" column="25" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.3381295" vertical-offset="649" max-vertical-offset="1751">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/models/groups.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="33" selection-start="3827" selection-end="3827" vertical-scroll-proportion="-0.66330934" vertical-offset="3096" max-vertical-offset="3791">
-          <folding>
-            <element signature="e#6#150#0" expanded="true" />
-            <marker date="1388560230867" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
-            <marker date="1388560230867" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
-            <marker date="1388560230867" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
-            <marker date="1388560230867" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
-          </folding>
         </state>
       </provider>
     </entry>
