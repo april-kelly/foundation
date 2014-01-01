@@ -141,7 +141,33 @@ class pages{
     }
 
     //Delete a page
-    public function delete_page(){
+    public function delete_page($page_id){
+
+        try{
+
+            //Setup Insert
+            $query = "DELETE FROM pages WHERE `page_id` = :page_id";
+            $handle= $this->dbc->setup($query);
+            $pages = $this->dbc->fetch_assoc($handle, array('page_id' => $page_id));
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
 
     }
 
