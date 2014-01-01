@@ -50,6 +50,7 @@ if($settings['plugins'] == true){
 
 //Look up the page
 $page = $pages->lookup($request);
+$pages->add_page('look a page', 'itworked.php');
 
 //Check the user's clearance
 //$auth = $users->clearance_check($_SESSION['user_id'], '');

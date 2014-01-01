@@ -96,7 +96,42 @@ class pages{
     }
 
     //Add a page
-    public function add_page(){
+    public function add_page($name, $path){
+
+        try{
+
+            //Setup Insert
+            $query = "INSERT INTO pages VALUES(:page_id, :name, :path)";
+            $handle= $this->dbc->setup($query);
+
+            //Define Parameters
+            $parameters = array(
+                 'page_id' => null,
+                 'name'    => $name,
+                 'path'    => $path,
+            );
+
+            //Run Insert
+            $pages = $this->dbc->fetch_assoc($handle, $parameters);
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
 
     }
 
