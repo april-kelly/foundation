@@ -11,7 +11,7 @@
 require_once('./path.php');
 require_once(ABSPATH.'includes/models/pdo.php');
 require_once(ABSPATH.'includes/models/settings.php');
-//require_once(ABSPATH.'includes/models/users.php');
+require_once(ABSPATH.'includes/models/users.php');
 require_once(ABSPATH.'includes/models/groups.php');
 require_once(ABSPATH.'includes/models/pages.php');
 require_once(ABSPATH.'includes/models/debug.php');
@@ -27,7 +27,7 @@ $set   = new settings;
 $dbc   = new db;
 
 //Setup up the database dependant classes
-//$users = new users($dbc);
+$users = new users($dbc);
 $pages = new pages($dbc);
 $groups = new groups;
 
@@ -55,7 +55,9 @@ if($settings['plugins'] == true){
 //Look up the page
 $page = $pages->lookup($request);
 
-$groups->add_page_into('1', '4');
+$test = $users->lookup('1');
+
+var_dump($test);
 
 $debug->dump();
 

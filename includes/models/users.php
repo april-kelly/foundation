@@ -10,7 +10,7 @@
 if(!(defined('ABSPATH'))){
     require_once('../../path.php');
 }
-require_once(ABSPATH.'includes/models/data.php');
+require_once(ABSPATH.'includes/models/pdo.php');
 
 class users {
 
@@ -24,7 +24,6 @@ class users {
             public $password    = '';
             public $login_count = '0';
             public $last_ip     = '0.0.0.0';
-            public $admin       = false;
 
         //Control variables
             public $debug       = true;
@@ -137,32 +136,96 @@ class users {
 
     }
 
-    //Create function
-    public function create(){
+    //Lookup a user
+    public function lookup($user_id){
 
-        /**
-         * This Function creates a new user.
-         */
+        try{
+
+            //Look up the user being requested
+            $query = "SELECT * FROM users WHERE `user_id` = :user_id";
+            $handle= $this->dbc->setup($query);
+            $users = $this->dbc->fetch_assoc($handle, array('user_id' => $user_id));
+
+            //Make sure there were results
+            if(!(empty($users)) && !($users == false)){
+
+                //Insert results into object
+                $this->user_id      = $users[0]["user_id"];
+                $this->firstname    = $users[0]["firstname"];
+                $this->lastname     = $users[0]["lastname"];
+                $this->username     = $users[0]["username"];
+                $this->password     = $users[0]["password"];
+                $this->login_count  = $users[0]["login_count"];
+                $this->last_ip      = $users[0]["last_ip"];
+
+                //return the first result only
+                return $users[0];
+
+            }else{
+
+                //Nothing to send, return false
+                return false;
+
+            }
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_exception('An error was encountered in the users class, add_user() function.');
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
 
     }
 
-    //Update function
-    public function update(){
+    //Add a user
+    public function add_user($name, $path){
 
-        /**
-         * This function updates and existing user.
-         */
+        try{
+
+            //Setup Insert
+            $query = "INSERT INTO users VALUES(:user_id, :name, :path)";
+            $handle= $this->dbc->setup($query);
+
+            //Define Parameters
+            $parameters = array(
+                'user_id' => null,
+                'name'    => $name,
+                'path'    => $path,
+            );
+
+            //Run Insert
+            $users = $this->dbc->fetch_assoc($handle, $parameters);
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_exception('An error was encountered in the users class, add_user() function.');
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
 
     }
-
-    //Delete function
-    public function delete(){
-
-        /**
-         * This function deletes a user.
-         */
-
-    }
-
 
 }
