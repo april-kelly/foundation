@@ -11,7 +11,7 @@
 require_once('./path.php');
 require_once(ABSPATH.'includes/models/pdo.php');
 require_once(ABSPATH.'includes/models/settings.php');
-require_once(ABSPATH.'includes/models/users.php');
+//require_once(ABSPATH.'includes/models/users.php');
 require_once(ABSPATH.'includes/models/pages.php');
 
 //Start the user's session
@@ -24,7 +24,7 @@ $set   = new settings;
 $dbc   = new db;
 
 //Setup up the database dependant classes
-$users = new users($dbc);
+//$users = new users($dbc);
 $pages = new pages($dbc);
 
 //Fetch the settings

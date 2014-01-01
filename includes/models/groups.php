@@ -41,11 +41,7 @@ class groups{
     //Add a group
     public function add_group($name, $description){
 
-        //Setup Query
-        $query = "";
 
-        //Run Query
-        $this->dbc
 
     }
 

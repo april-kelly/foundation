@@ -8,7 +8,7 @@
 
 class db{
 
-    public $db_name = 'CloudBurst';
+    public $db_name = 'foundation';
     public $db_host = 'localhost';
     public $db_user = 'root';
     public $db_pass = 'kd0hdf';
@@ -205,7 +205,7 @@ class db{
 
     }
 
-    public function prepare($query){
+    public function setup($query){
 
         //Make sure we have not failed
         if($this->fail == false){
@@ -222,6 +222,27 @@ class db{
         }else{
 
             //We failed earlier so return false
+            return false;
+
+        }
+
+    }
+
+    public function run($handle, $parameters){
+
+        //Ensure the user has sent everything
+        if(isset($handle, $parameters) && is_object($handle)){
+
+            $handle->execute($parameters);
+
+            while($row = $handle->fetch(PDO::FETCH_ASSOC)) {
+                $array[] = $row;
+            }
+
+            return $array;
+
+        }else{
+
             return false;
 
         }

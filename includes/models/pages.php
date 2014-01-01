@@ -10,7 +10,7 @@
 if(!(defined('ABSPATH'))){
     require_once('../../path.php');
 }
-require_once(ABSPATH.'includes/models/data.php');
+require_once(ABSPATH.'includes/models/pdo.php');
 
 class pages{
 
@@ -47,15 +47,16 @@ class pages{
     //Lookup a page
     public function lookup($name){
 
-        //Sanitize inputs
-        $request = $this->dbc->sanitize($name);
+
 
         //Look up the page being requested
-        $query = "SELECT * FROM pages WHERE `name` = '".$request."'";
-        $pages = $this->dbc->query($query);
+        $query = "SELECT * FROM pages WHERE `name` = :name";
+        $handle= $this->dbc->setup($query);
+        $pages = $this->dbc->run($handle, array('name' => 'hasdfome'));
 
-        //Force loading of the first result
+        //return the first result only
         return $pages[0];
+
 
     }
 
