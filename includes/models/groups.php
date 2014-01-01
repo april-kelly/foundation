@@ -217,7 +217,7 @@ class groups{
 
 
     //Add a user to a group
-    public function add_user($user_id, $group_id){
+    public function add_user_into($user_id, $group_id){
 
         try{
 
@@ -228,6 +228,46 @@ class groups{
             //Define Parameters
             $parameters = array(
                 'user_id'        => $user_id,
+                'group_id'       => $group_id,
+            );
+
+            //Run Insert
+            $groups = $this->dbc->fetch_assoc($handle, $parameters);
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_exception('An error was encountered in the groups class, add_group() function.');
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
+
+    }
+
+    //Add a page to a group
+    public function add_page_into($page_id, $group_id){
+
+        try{
+
+            //Setup Insert
+            $query = "INSERT INTO `pages-groups` VALUES(:page_id, :group_id)";
+            $handle= $this->dbc->setup($query);
+
+            //Define Parameters
+            $parameters = array(
+                'page_id'        => $page_id,
                 'group_id'       => $group_id,
             );
 

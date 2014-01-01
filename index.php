@@ -55,7 +55,7 @@ if($settings['plugins'] == true){
 //Look up the page
 $page = $pages->lookup($request);
 
-$groups->add_user('0', '3');
+$groups->add_page_into('1', '4');
 
 $debug->dump();
 
