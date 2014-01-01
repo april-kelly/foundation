@@ -40,7 +40,38 @@ class debug{
         echo '<hr />';
 
         //End output buffering
-        $this->debug_buffer = $this->debug_buffer.ob_get_flush();
+        $this->debug_buffer[count($this->debug_buffer)] = $this->debug_buffer.ob_get_flush();
+
+    }
+
+    //Dump it
+    public function dump(){
+
+        //Start output buffering
+        ob_start();
+
+        echo '<h1>Debugging Information: </h1>'."\r\n";
+
+        echo '<h3>Message(s): </h3>'."\r\n";
+
+        echo count($this->debug_buffer).' Message(s) were reported.<hr />'."\r\n";
+
+        echo $this->debug_buffer;
+
+        echo '<h3>Exception(s): </h3>'."\r\n";
+
+        echo count($this->exception_buffer).' Exception(s) were reported.<br />'."\r\n";
+
+        echo '<pre>'."\r\n";
+
+        echo $this->exception_buffer;
+
+        echo '</pre>'."\r\n";
+
+        echo '<hr />'."\r\n";
+
+        //End output buffering
+        ob_end_flush();
 
     }
 

@@ -53,7 +53,7 @@ if($settings['plugins'] == true){
 //Look up the page
 $page = $pages->lookup($request);
 
-var_dump($debug);
+$debug->dump();
 
 //Check the user's clearance
 //$auth = $users->clearance_check($_SESSION['user_id'], '');

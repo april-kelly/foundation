@@ -136,7 +136,55 @@ class pages{
     }
 
     //Change a page
-    public function change_page(){
+    public function update_page($page_id, $name, $path){
+
+        //Handle empty parameters
+        if(empty($name)){
+
+            $name = $this->name;
+
+        }
+
+        if(empty($path)){
+
+            $path = $this->path;
+
+        }
+
+        try{
+
+            //Setup Insert
+            $query = "UPDATE pages SET `name` = :name, `path` = :path WHERE `page_id` = :page_id ";
+            $handle= $this->dbc->setup($query);
+
+            //Define Parameters
+            $parameters = array(
+                'page_id' => $page_id,
+                'name'    => $name,
+                'path'    => $path,
+            );
+
+            //Run Insert
+            $pages = $this->dbc->fetch_assoc($handle, $parameters);
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
 
     }
 
