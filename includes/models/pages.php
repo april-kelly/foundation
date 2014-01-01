@@ -48,14 +48,29 @@ class pages{
     public function lookup($name){
 
 
-
         //Look up the page being requested
         $query = "SELECT * FROM pages WHERE `name` = :name";
         $handle= $this->dbc->setup($query);
-        $pages = $this->dbc->run($handle, array('name' => 'hasdfome'));
+        $pages = $this->dbc->fetch_assoc($handle, array('name' => $name));
 
-        //return the first result only
-        return $pages[0];
+        //Make sure there were results
+        if(!(empty($pages)) && !($pages == false)){
+
+            //Insert results into object
+            $this->page_id = $pages[0]["page_id"];
+            $this->name    = $pages[0]["name"];
+            $this->path    = $pages[0]["path"];
+
+            //return the first result only
+            return $pages[0];
+
+        }else{
+
+            //Nothing to send, return false
+            return false;
+
+        }
+
 
 
     }

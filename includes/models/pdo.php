@@ -228,7 +228,7 @@ class db{
 
     }
 
-    public function run($handle, $parameters){
+    public function fetch_assoc($handle, $parameters){
 
         //Ensure the user has sent everything
         if(isset($handle, $parameters) && is_object($handle)){
@@ -239,7 +239,15 @@ class db{
                 $array[] = $row;
             }
 
-            return $array;
+            if(isset($array)){
+
+                return $array;
+
+            }else{
+
+                return false;
+
+            }
 
         }else{
 

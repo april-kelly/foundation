@@ -54,6 +54,7 @@ $page = $pages->lookup($request);
 //Check the user's clearance
 //$auth = $users->clearance_check($_SESSION['user_id'], '');
 
+//Always allow display (debugging) *REMOVE BEFORE PRODUCTION*
 $auth = true;
 
 //Start output buffering
