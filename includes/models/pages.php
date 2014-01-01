@@ -11,6 +11,7 @@ if(!(defined('ABSPATH'))){
     require_once('../../path.php');
 }
 require_once(ABSPATH.'includes/models/pdo.php');
+require_once(ABSPATH.'includes/models/debug.php');
 
 class pages{
 
@@ -23,6 +24,7 @@ class pages{
 
         //Control
         public $dbc;
+        public $debug;
 
 
     //Constructor
@@ -42,6 +44,9 @@ class pages{
 
         }
 
+        //Setup debugging
+        $this->debug = new debug;
+
     }
 
     //Lookup a page
@@ -49,36 +54,44 @@ class pages{
 
         try{
 
+            //Look up the page being requested
+            $query = "SELECT * FROM pages WHERE `name` = :name";
+            $handle= $this->dbc->setup($query);
+            $pages = $this->dbc->fetch_assoc($handle, array('name' => $name));
+
+            //Make sure there were results
+            if(!(empty($pages)) && !($pages == false)){
+
+                //Insert results into object
+                $this->page_id = $pages[0]["page_id"];
+                $this->name    = $pages[0]["name"];
+                $this->path    = $pages[0]["path"];
+
+                //return the first result only
+                return $pages[0];
+
+            }else{
+
+                //Nothing to send, return false
+                return false;
+
+            }
+
         }catch(PDOException $e){
 
+            //Ok, something went wrong, let's handle it
 
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+
+            }
+
+            //Indicate failure by returning false
             return false;
 
         }
-        //Look up the page being requested
-        $query = "SELECT * FROM pages WHERE `name` = :name";
-        $handle= $this->dbc->setup($query);
-        $pages = $this->dbc->fetch_assoc($handle, array('name' => $name));
-
-        //Make sure there were results
-        if(!(empty($pages)) && !($pages == false)){
-
-            //Insert results into object
-            $this->page_id = $pages[0]["page_id"];
-            $this->name    = $pages[0]["name"];
-            $this->path    = $pages[0]["path"];
-
-            //return the first result only
-            return $pages[0];
-
-        }else{
-
-            //Nothing to send, return false
-            return false;
-
-        }
-
-
 
     }
 

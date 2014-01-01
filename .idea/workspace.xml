@@ -35,9 +35,9 @@
       <file leaf-file-name="pages.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.24373259" vertical-offset="641" max-vertical-offset="1700">
+            <state line="68" column="0" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.505571" vertical-offset="708" max-vertical-offset="1921">
               <folding>
-                <marker date="1388554578336" expanded="true" signature="1009:1049" placeholder="SELECT * FRO..pages..." />
+                <marker date="1388555414044" expanded="true" signature="1080:1120" placeholder="SELECT * FRO..pages..." />
               </folding>
             </state>
           </provider>
@@ -69,8 +69,8 @@
         <option value="$PROJECT_DIR$/includes/models/groups.php" />
         <option value="$PROJECT_DIR$/includes/models/pdo.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/includes/models/pages.php" />
         <option value="$PROJECT_DIR$/includes/models/debug.php" />
+        <option value="$PROJECT_DIR$/includes/models/pages.php" />
       </list>
     </option>
   </component>
@@ -170,6 +170,7 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="SearchEverywhereHistory" value="/" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -207,7 +208,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="1" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -286,9 +287,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="910" selection-end="910" vertical-scroll-proportion="0.24373259" vertical-offset="641" max-vertical-offset="1700">
+        <state line="68" column="0" selection-start="1555" selection-end="1555" vertical-scroll-proportion="0.505571" vertical-offset="708" max-vertical-offset="1921">
           <folding>
-            <marker date="1388554578336" expanded="true" signature="1009:1049" placeholder="SELECT * FRO..pages..." />
+            <marker date="1388555414044" expanded="true" signature="1080:1120" placeholder="SELECT * FRO..pages..." />
           </folding>
         </state>
       </provider>
