@@ -13,6 +13,7 @@ require_once(ABSPATH.'includes/models/pdo.php');
 require_once(ABSPATH.'includes/models/settings.php');
 //require_once(ABSPATH.'includes/models/users.php');
 require_once(ABSPATH.'includes/models/pages.php');
+require_once(ABSPATH.'includes/models/debug.php');
 
 //Start the user's session
 if(!(isset($_SESSION))){
@@ -20,6 +21,7 @@ if(!(isset($_SESSION))){
 }
 
 //Setup the non database requiring system classes
+$debug = new debug;
 $set   = new settings;
 $dbc   = new db;
 
@@ -50,7 +52,8 @@ if($settings['plugins'] == true){
 
 //Look up the page
 $page = $pages->lookup($request);
-$pages->delete_page('3');
+
+var_dump($debug);
 
 //Check the user's clearance
 //$auth = $users->clearance_check($_SESSION['user_id'], '');

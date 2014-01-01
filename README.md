@@ -1,7 +1,7 @@
 Foundation
 ==========
 
-
+Foundation is what could be called a templating system.
 
 =========
 
