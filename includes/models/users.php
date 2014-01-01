@@ -137,6 +137,15 @@ class users {
 
     }
 
+    //Create function
+    public function create(){
+
+        /**
+         * This Function creates a new user.
+         */
+
+    }
+
     //Update function
     public function update(){
 
@@ -155,13 +164,5 @@ class users {
 
     }
 
-    //Create function
-    public function create(){
-
-        /**
-         * This Function creates a new user.
-         */
-
-    }
 
 }

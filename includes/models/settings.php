@@ -31,6 +31,7 @@ class settings {
     public $ponify                                  =   false;                     //Ponifys the application if implemented
     public $theme                                   =   'default';                 //Sets the theme
     public $plugins                                 =   true;                      //Enables optional plugins
+    public $debug                                   =   true;                      //Enables debugging
 
     //Constructor
     public function __construct(){
