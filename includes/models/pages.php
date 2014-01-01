@@ -47,7 +47,14 @@ class pages{
     //Lookup a page
     public function lookup($name){
 
+        try{
 
+        }catch(PDOException $e){
+
+
+            return false;
+
+        }
         //Look up the page being requested
         $query = "SELECT * FROM pages WHERE `name` = :name";
         $handle= $this->dbc->setup($query);
