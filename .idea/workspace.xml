@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debug.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="debug.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/models/debug.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="5" selection-start="841" selection-end="841" vertical-scroll-proportion="-16.115385" vertical-offset="329" max-vertical-offset="1564">
+            <state line="21" column="46" selection-start="380" selection-end="380" vertical-scroll-proportion="0.10359712" vertical-offset="285" max-vertical-offset="1564">
               <folding>
                 <element signature="e#8#151#0" expanded="true" />
               </folding>
@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pages.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="93" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.3856115" vertical-offset="1126" max-vertical-offset="3842">
+            <state line="87" column="93" selection-start="2118" selection-end="2118" vertical-scroll-proportion="-10.307693" vertical-offset="1126" max-vertical-offset="3842">
               <folding>
                 <marker date="1388559234124" expanded="true" signature="1080:1120" placeholder="SELECT * FRO..pages..." />
                 <marker date="1388559234124" expanded="true" signature="2375:2423" placeholder="INSERT INTO ..." />
@@ -87,8 +87,8 @@
         <option value="$PROJECT_DIR$/includes/models/pdo.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/includes/models/debug.php" />
         <option value="$PROJECT_DIR$/includes/models/pages.php" />
+        <option value="$PROJECT_DIR$/includes/models/debug.php" />
       </list>
     </option>
   </component>
@@ -331,18 +331,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/models/debug.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="5" selection-start="841" selection-end="841" vertical-scroll-proportion="-16.115385" vertical-offset="329" max-vertical-offset="1564">
-          <folding>
-            <element signature="e#8#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/models/pages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="93" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.3856115" vertical-offset="1126" max-vertical-offset="3842">
+        <state line="87" column="93" selection-start="2118" selection-end="2118" vertical-scroll-proportion="-10.307693" vertical-offset="1126" max-vertical-offset="3842">
           <folding>
             <marker date="1388559234124" expanded="true" signature="1080:1120" placeholder="SELECT * FRO..pages..." />
             <marker date="1388559234124" expanded="true" signature="2375:2423" placeholder="INSERT INTO ..." />
@@ -350,6 +341,15 @@
             <marker date="1388559234124" expanded="true" signature="3657:3731" placeholder="UPDATE pages..." />
             <marker date="1388559234124" expanded="true" signature="4778:4822" placeholder="DELETE FROM ..." />
             <marker date="1388559234124" expanded="true" signature="4784:4815" placeholder="SELECT * FRO..pages..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/models/debug.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="46" selection-start="380" selection-end="380" vertical-scroll-proportion="0.10359712" vertical-offset="285" max-vertical-offset="1564">
+          <folding>
+            <element signature="e#8#151#0" expanded="true" />
           </folding>
         </state>
       </provider>

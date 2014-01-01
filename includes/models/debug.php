@@ -11,7 +11,7 @@ class debug{
 
     //Object Properties
     public $exception_buffer;
-    public $debug_buffer;
+    public $message_buffer;
 
     //Constructor
     public function __construct(){
@@ -40,7 +40,7 @@ class debug{
         echo '<hr />';
 
         //End output buffering
-        $this->debug_buffer[count($this->debug_buffer)] = $this->debug_buffer.ob_get_flush();
+        $this->message_buffer[count($this->message_buffer)] = $this->message_buffer.ob_get_flush();
 
     }
 
@@ -54,9 +54,9 @@ class debug{
 
         echo '<h3>Message(s): </h3>'."\r\n";
 
-        echo count($this->debug_buffer).' Message(s) were reported.<hr />'."\r\n";
+        echo count($this->message_buffer).' Message(s) were reported.<hr />'."\r\n";
 
-        echo $this->debug_buffer;
+        echo $this->message_buffer;
 
         echo '<h3>Exception(s): </h3>'."\r\n";
 
@@ -80,7 +80,7 @@ class debug{
 
         //Cast properties to null
         $this->exception_buffer = null;
-        $this->debug_buffer     = null;
+        $this->message_buffer     = null;
 
     }
 
