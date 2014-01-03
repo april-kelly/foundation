@@ -77,7 +77,7 @@ class groups{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the groups class, add_group() function.');
+                $this->debug->add_message('An error was encountered in the groups class, lookup() function.');
 
             }
 
@@ -118,7 +118,7 @@ class groups{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the groups class, add_group() function.');
+                $this->debug->add_message('An error was encountered in the groups class, add_group() function.');
 
             }
 
@@ -172,7 +172,7 @@ class groups{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the groups class, update_group() function.');
+                $this->debug->add_message('An error was encountered in the groups class, update_group() function.');
 
             }
 
@@ -245,7 +245,7 @@ class groups{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the groups class, add_group() function.');
+                $this->debug->add_message('An error was encountered in the groups class, add_group() function.');
 
             }
 
@@ -277,7 +277,7 @@ class groups{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_message('An error was encountered in the groups class, delete_group() function.');
+                $this->debug->add_message('An error was encountered in the groups class, delete_user_from_group() function.');
 
             }
 
@@ -309,7 +309,7 @@ class groups{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_message('An error was encountered in the groups class, delete_group() function.');
+                $this->debug->add_message('An error was encountered in the groups class, delete_page_from_group() function.');
 
             }
 
@@ -351,7 +351,7 @@ class groups{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the groups class, add_group() function.');
+                $this->debug->add_message('An error was encountered in the groups class, add_group() function.');
 
             }
 

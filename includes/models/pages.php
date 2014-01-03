@@ -85,7 +85,7 @@ class pages{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the pages class, add_page() function.');
+                $this->debug->add_message('An error was encountered in the pages class, add_page() function.');
 
             }
 
@@ -126,7 +126,7 @@ class pages{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the pages class, add_page() function.');
+                $this->debug->add_message('An error was encountered in the pages class, add_page() function.');
 
             }
 
@@ -180,7 +180,7 @@ class pages{
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the pages class, update_page() function.');
+                $this->debug->add_message('An error was encountered in the pages class, update_page() function.');
 
             }
 

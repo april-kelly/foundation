@@ -213,7 +213,7 @@ class users {
 
             //Run Insert
             $users = $this->dbc->fetch_assoc($handle, $parameters);
-echo 'asdf';
+            
             //If everything worked, let's return true
             return true;
 

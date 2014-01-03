@@ -6,6 +6,9 @@
  * Programmer:  Liam Kelly
  */
 
+//Includes
+require_once(ABSPATH.'includes/models/debug.php');
+
 class db{
 
     public $db_name = 'foundation';
@@ -17,11 +20,15 @@ class db{
     public $fail = false;
     public $prepared = false;
     public $errors = '';
+    public $debug;
 
     public function __construct(){
 
         //Connect to the database
         $this->connect();
+
+        //Setup Debugging
+        $this->debug = new debug;
 
     }
 
@@ -37,6 +44,10 @@ class db{
 
             $this->errors = $this->errors."\r\n".$e->getMessage();
             $this->fail = true;
+
+            //Foundation debugging
+            $this->debug->add_exception($e);
+            $this->debug->add_message('Connection to database has failed.');
 
         }
 
@@ -82,6 +93,10 @@ class db{
 
                 $this->errors = $this->errors.$e->getMessage();
                 $this->fail = true;
+
+                //Foundation debugging
+                $this->debug->add_exception($e);
+                $this->debug->add_message('Query to the database has failed.');
 
             }
 
@@ -140,6 +155,10 @@ class db{
 
                     $this->errors = $this->errors.$e->getMessage();
                     $this->fail = true;
+
+                    //Foundation debugging
+                    $this->debug->add_exception($e);
+                    $this->debug->add_message('Excution of prepare statement has failed.');
 
                 }
 
