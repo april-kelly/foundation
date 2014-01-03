@@ -55,6 +55,7 @@ if($settings['plugins'] == true){
 //Look up the page
 $page = $pages->lookup($request);
 
+$users->add_user('liam', 'kelly2', 'liam@example.com', 'password', '130913', '::1');
 $test = $users->lookup('1');
 
 var_dump($test);

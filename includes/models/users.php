@@ -11,6 +11,7 @@ if(!(defined('ABSPATH'))){
     require_once('../../path.php');
 }
 require_once(ABSPATH.'includes/models/pdo.php');
+require_once(ABSPATH.'includes/models/debug.php');
 
 class users {
 
@@ -45,6 +46,9 @@ class users {
             $this->dbc->connect();
 
         }
+
+        //Setup Debugging
+        $this->debug = new debug;
 
     }
 
@@ -176,7 +180,7 @@ class users {
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the users class, add_user() function.');
+                $this->debug->add_message('An error was encountered in the users class, add_user() function.');
 
             }
 
@@ -188,24 +192,28 @@ class users {
     }
 
     //Add a user
-    public function add_user($name, $path){
+    public function add_user($firstname, $lastname, $username, $password, $login_count, $last_ip){
 
         try{
 
             //Setup Insert
-            $query = "INSERT INTO users VALUES(:user_id, :name, :path)";
+            $query = "INSERT INTO `users` VALUES(:user_id, :firstname, :lastname, :username, :password, :login_count, :last_ip)";
             $handle= $this->dbc->setup($query);
 
             //Define Parameters
             $parameters = array(
-                'user_id' => null,
-                'name'    => $name,
-                'path'    => $path,
+                'user_id'      => null,
+                'firstname'    => $firstname,
+                'lastname'     => $lastname,
+                'username'     => $username,
+                'password'     => $password,
+                'login_count'  => $login_count,
+                'last_ip'      => $last_ip,
             );
 
             //Run Insert
             $users = $this->dbc->fetch_assoc($handle, $parameters);
-
+echo 'asdf';
             //If everything worked, let's return true
             return true;
 
@@ -217,7 +225,7 @@ class users {
             if(isset($settings['debug']) && $settings["debug"] == true){
 
                 $this->debug->add_exception($e);
-                $this->debug->add_exception('An error was encountered in the users class, add_user() function.');
+                $this->debug->add_message('An error was encountered in the users class, add_user() function.');
 
             }
 

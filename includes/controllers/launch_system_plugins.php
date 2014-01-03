@@ -21,7 +21,13 @@ unset($plugins[1]);
 //Start loading plugins
 foreach($plugins as $plugin){
 
-    //Call each plugin hook
-    include_once(ABSPATH.'/includes/hooks/system/'.$plugin);
+    //Ensure this is a php file
+    if(pathinfo($plugin, PATHINFO_EXTENSION) == 'php'){
+
+        //Call each plugin hook
+        include_once(ABSPATH.'/includes/hooks/system/'.$plugin);
+
+
+    }
 
 }
