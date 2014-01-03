@@ -11,6 +11,7 @@
 require_once('./path.php');
 require_once(ABSPATH.'includes/models/pdo.php');
 require_once(ABSPATH.'includes/models/settings.php');
+require_once(ABSPATH.'includes/models/protected_settings.php');
 require_once(ABSPATH.'includes/models/users.php');
 require_once(ABSPATH.'includes/models/groups.php');
 require_once(ABSPATH.'includes/models/pages.php');

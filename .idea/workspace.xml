@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="70" selection-start="1351" selection-end="1351" vertical-scroll-proportion="6.5384617" vertical-offset="1054" max-vertical-offset="1751">
+            <state line="13" column="63" selection-start="343" selection-end="343" vertical-scroll-proportion="-0.6527977" vertical-offset="591" max-vertical-offset="1768">
               <folding />
             </state>
           </provider>
@@ -43,17 +43,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="users.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/models/users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="12" selection-start="5990" selection-end="5990" vertical-scroll-proportion="0.9368723" vertical-offset="1591" max-vertical-offset="2737">
+            <state line="213" column="92" selection-start="6009" selection-end="6009" vertical-scroll-proportion="-14.5" vertical-offset="1017" max-vertical-offset="2006">
               <folding>
                 <element signature="e#6#178#0" expanded="true" />
                 <element signature="n#login#0;n#users#0;n#!!top" expanded="false" />
                 <element signature="n#clearance_check#0;n#users#0;n#!!top" expanded="false" />
-                <marker date="1388729850733" expanded="true" signature="3704:3750" placeholder="SELECT * FRO..users..." />
-                <marker date="1388729850733" expanded="true" signature="5334:5439" placeholder="INSERT INTO ..." />
+                <element signature="n#lookup#0;n#users#0;n#!!top" expanded="false" />
+                <marker date="1388730265817" expanded="true" signature="3889:3935" placeholder="SELECT * FRO..users..." />
+                <marker date="1388730265817" expanded="true" signature="5519:5624" placeholder="INSERT INTO ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="protected_settings.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/models/protected_settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="442">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,8 +95,8 @@
         <option value="$PROJECT_DIR$/includes/controllers/launch_optional_plugins.php" />
         <option value="$PROJECT_DIR$/includes/models/pages.php" />
         <option value="$PROJECT_DIR$/includes/models/groups.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/models/pdo.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/models/users.php" />
       </list>
     </option>
@@ -282,7 +292,9 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
@@ -311,8 +323,9 @@
             <element signature="e#6#178#0" expanded="true" />
             <element signature="n#login#0;n#users#0;n#!!top" expanded="false" />
             <element signature="n#clearance_check#0;n#users#0;n#!!top" expanded="false" />
-            <marker date="1388729850733" expanded="true" signature="3704:3750" placeholder="SELECT * FRO..users..." />
-            <marker date="1388729850733" expanded="true" signature="5334:5439" placeholder="INSERT INTO ..." />
+            <element signature="n#lookup#0;n#users#0;n#!!top" expanded="false" />
+            <marker date="1388730265817" expanded="true" signature="3889:3935" placeholder="SELECT * FRO..users..." />
+            <marker date="1388730265817" expanded="true" signature="5519:5624" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -415,23 +428,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/includes/models/protected_settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="70" selection-start="1351" selection-end="1351" vertical-scroll-proportion="6.5384617" vertical-offset="1054" max-vertical-offset="1751">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="710">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/models/users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="12" selection-start="5990" selection-end="5990" vertical-scroll-proportion="0.9368723" vertical-offset="1591" max-vertical-offset="2737">
+        <state line="213" column="92" selection-start="6009" selection-end="6009" vertical-scroll-proportion="-14.5" vertical-offset="1017" max-vertical-offset="2006">
           <folding>
             <element signature="e#6#178#0" expanded="true" />
             <element signature="n#login#0;n#users#0;n#!!top" expanded="false" />
             <element signature="n#clearance_check#0;n#users#0;n#!!top" expanded="false" />
-            <marker date="1388729850733" expanded="true" signature="3704:3750" placeholder="SELECT * FRO..users..." />
-            <marker date="1388729850733" expanded="true" signature="5334:5439" placeholder="INSERT INTO ..." />
+            <element signature="n#lookup#0;n#users#0;n#!!top" expanded="false" />
+            <marker date="1388730265817" expanded="true" signature="3889:3935" placeholder="SELECT * FRO..users..." />
+            <marker date="1388730265817" expanded="true" signature="5519:5624" placeholder="INSERT INTO ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="63" selection-start="343" selection-end="343" vertical-scroll-proportion="-0.6527977" vertical-offset="591" max-vertical-offset="1768">
+          <folding />
         </state>
       </provider>
     </entry>

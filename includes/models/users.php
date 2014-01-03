@@ -12,6 +12,7 @@ if(!(defined('ABSPATH'))){
 }
 require_once(ABSPATH.'includes/models/pdo.php');
 require_once(ABSPATH.'includes/models/debug.php');
+require_once(ABSPATH.'includes/models/protected_settings.php');
 
 class users {
 
@@ -28,7 +29,8 @@ class users {
 
         //Control variables
             public $debug       = true;
-            public $dbc         = null;
+            public $dbc;
+            public $protected_settings;
 
     //Constructor
     public function __construct($dbc = null){
@@ -49,6 +51,9 @@ class users {
 
         //Setup Debugging
         $this->debug = new debug;
+
+        //Setup Protected Settings
+        $this->protected_settings = new protected_settings;
 
     }
 
@@ -206,14 +211,14 @@ class users {
                 'firstname'    => $firstname,
                 'lastname'     => $lastname,
                 'username'     => $username,
-                'password'     => $password,
+                'password'     => hash('SHA512', $password.$this->protected_settings->salt),
                 'login_count'  => $login_count,
                 'last_ip'      => $last_ip,
             );
 
             //Run Insert
             $users = $this->dbc->fetch_assoc($handle, $parameters);
-            
+
             //If everything worked, let's return true
             return true;
 
