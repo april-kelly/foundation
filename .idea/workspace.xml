@@ -35,15 +35,16 @@
       <file leaf-file-name="groups.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/models/groups.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="259" column="26" selection-start="6690" selection-end="6690" vertical-scroll-proportion="0.19655667" vertical-offset="4266" max-vertical-offset="5168">
+            <state line="272" column="0" selection-start="7078" selection-end="7078" vertical-scroll-proportion="0.19655667" vertical-offset="4487" max-vertical-offset="5712">
               <folding>
                 <element signature="e#6#150#0" expanded="true" />
-                <marker date="1388728493634" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
-                <marker date="1388728493634" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
-                <marker date="1388728493634" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
-                <marker date="1388728493634" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
-                <marker date="1388728493634" expanded="true" signature="5681:5735" placeholder="INSERT INTO ..." />
-                <marker date="1388728493634" expanded="true" signature="6790:6844" placeholder="INSERT INTO ..." />
+                <marker date="1388728759685" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
+                <marker date="1388728759685" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
+                <marker date="1388728759685" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
+                <marker date="1388728759685" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
+                <marker date="1388728759685" expanded="true" signature="5681:5735" placeholder="INSERT INTO ..." />
+                <marker date="1388728759685" expanded="true" signature="6775:6828" placeholder="DELETE FROM ..." />
+                <marker date="1388728759685" expanded="true" signature="7700:7754" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -438,15 +439,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/models/groups.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="26" selection-start="6690" selection-end="6690" vertical-scroll-proportion="0.19655667" vertical-offset="4266" max-vertical-offset="5168">
+        <state line="272" column="0" selection-start="7078" selection-end="7078" vertical-scroll-proportion="0.19655667" vertical-offset="4487" max-vertical-offset="5712">
           <folding>
             <element signature="e#6#150#0" expanded="true" />
-            <marker date="1388728493634" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
-            <marker date="1388728493634" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
-            <marker date="1388728493634" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
-            <marker date="1388728493634" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
-            <marker date="1388728493634" expanded="true" signature="5681:5735" placeholder="INSERT INTO ..." />
-            <marker date="1388728493634" expanded="true" signature="6790:6844" placeholder="INSERT INTO ..." />
+            <marker date="1388728759685" expanded="true" signature="876:925" placeholder="SELECT * FRO..groups..." />
+            <marker date="1388728759685" expanded="true" signature="2235:2292" placeholder="INSERT INTO ..." />
+            <marker date="1388728759685" expanded="true" signature="3585:3676" placeholder="UPDATE group..." />
+            <marker date="1388728759685" expanded="true" signature="4758:4805" placeholder="DELETE FROM ..." />
+            <marker date="1388728759685" expanded="true" signature="5681:5735" placeholder="INSERT INTO ..." />
+            <marker date="1388728759685" expanded="true" signature="6775:6828" placeholder="DELETE FROM ..." />
+            <marker date="1388728759685" expanded="true" signature="7700:7754" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>

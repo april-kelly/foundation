@@ -256,6 +256,38 @@ class groups{
 
     }
 
+    //Delete a group
+    public function delete_user_from_group($user_id){
+
+        try{
+
+            //Setup Insert
+            $query = "DELETE FROM `users-groups` WHERE `user_id` = :user_id";
+            $handle= $this->dbc->setup($query);
+            $users = $this->dbc->fetch_assoc($handle, array('user_id' => $user_id));
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_message('An error was encountered in the groups class, delete_group() function.');
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
+
+    }
+
     //Add a page to a group
     public function add_page_into_group($page_id, $group_id){
 
