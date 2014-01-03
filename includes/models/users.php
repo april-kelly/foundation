@@ -242,6 +242,51 @@ class users {
 
     }
 
+    //Update a user
+    public function update_user($user_id, $firstname, $lastname, $username, $password, $login_count, $last_ip){
+
+        try{
+
+            //Setup Insert
+            $query = "UPDATE `users` SET `firstname` = :firstname, `lastname` = :lastname, `username` = :username, `password` = :password, `login_count` = :login_count, `last_ip` = :last_ip WHERE `user_id` = :user_id";
+            $handle= $this->dbc->setup($query);
+
+            //Define Parameters
+            $parameters = array(
+                'user_id'      => $user_id,
+                'firstname'    => $firstname,
+                'lastname'     => $lastname,
+                'username'     => $username,
+                'password'     => hash('SHA512', $password.$this->protected_settings->salt),
+                'login_count'  => $login_count,
+                'last_ip'      => $last_ip,
+            );
+
+            //Run Insert
+            $users = $this->dbc->fetch_assoc($handle, $parameters);
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_message('An error was encountered in the users class, add_user() function.');
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
+
+    }
+
     //Delete a user
     public function delete_user($user_id){
 
