@@ -107,6 +107,7 @@ class users {
 
     }
 
+    //Check user clearance
     public function clearance_check($user_id, $group_id){
 
         //Sanitize inputs
@@ -231,6 +232,38 @@ class users {
 
                 $this->debug->add_exception($e);
                 $this->debug->add_message('An error was encountered in the users class, add_user() function.');
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
+
+    }
+
+    //Delete a user
+    public function delete_user($user_id){
+
+        try{
+
+            //Setup Insert
+            $query = "DELETE FROM users WHERE `user_id` = :user_id";
+            $handle= $this->dbc->setup($query);
+            $users = $this->dbc->fetch_assoc($handle, array('user_id' => $user_id));
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_message('An error was encountered in the users class, delete_user() function.');
 
             }
 

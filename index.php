@@ -57,6 +57,7 @@ if($settings['plugins'] == true){
 $page = $pages->lookup($request);
 
 $users->add_user('Rainbow', 'Dash', 'rd', 'twilight', '0', '0.0.0.0');
+$users->delete_user('3');
 
 $debug->dump();
 
