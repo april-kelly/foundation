@@ -217,7 +217,7 @@ class groups{
 
 
     //Add a user to a group
-    public function add_user_into($user_id, $group_id){
+    public function add_user_into_group($user_id, $group_id){
 
         try{
 
@@ -257,7 +257,7 @@ class groups{
     }
 
     //Add a page to a group
-    public function add_page_into($page_id, $group_id){
+    public function add_page_into_group($page_id, $group_id){
 
         try{
 
