@@ -256,7 +256,7 @@ class groups{
 
     }
 
-    //Delete a group
+    //Remove a user from a group
     public function delete_user_from_group($user_id){
 
         try{
@@ -287,6 +287,40 @@ class groups{
         }
 
     }
+
+    //Remove a page from a group
+    public function delete_page_from_group($page_id){
+
+        try{
+
+            //Setup Insert
+            $query = "DELETE FROM `pages-groups` WHERE `page_id` = :page_id";
+            $handle= $this->dbc->setup($query);
+            $pages = $this->dbc->fetch_assoc($handle, array('page_id' => $page_id));
+
+            //If everything worked, let's return true
+            return true;
+
+        }catch(PDOException $e){
+
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_message('An error was encountered in the groups class, delete_group() function.');
+
+            }
+
+            //Indicate failure by returning false
+            return false;
+
+        }
+
+    }
+
+
 
     //Add a page to a group
     public function add_page_into_group($page_id, $group_id){
