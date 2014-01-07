@@ -1,4 +1,21 @@
 <?php
+
+/**
+ * Copyright 2013 William Caleb Kelly
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /**
  * Name:        CloudBurst pdo based crud
  * Description: Handles requests for the database
@@ -8,21 +25,36 @@
 
 //Includes
 require_once(ABSPATH.'includes/models/debug.php');
+require_once(ABSPATH.'includes/models/protected_settings.php');
 
 class db{
 
-    public $db_name = 'foundation';
-    public $db_host = 'localhost';
-    public $db_user = 'root';
-    public $db_pass = 'kd0hdf';
+    //Login
+    public $db_name = '';
+    public $db_host = '';
+    public $db_user = '';
+    public $db_pass = '';
+
+    //Control
     public $dbc = '';
     public $results = '';
     public $fail = false;
     public $prepared = false;
     public $errors = '';
     public $debug;
+    public $settings;
 
     public function __construct(){
+
+        //Setup the settings
+        $set = new protected_settings();
+        $this->settings = $set->fetch();
+
+        //Setup the database credentials
+        $this->db_name = $this->settings['db_name'];
+        $this->db_host = $this->settings['db_host'];
+        $this->db_user = $this->settings['db_user'];
+        $this->db_pass = $this->settings['db_pass'];
 
         //Connect to the database
         $this->connect();

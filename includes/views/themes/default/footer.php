@@ -16,35 +16,12 @@
  * limitations under the License.
  */
 
-/**
- * Name:        launch_system_plugins.php
- * Description: Launches system plugins
- * Date:        12/29/13
+ /**
+ * Name:        Footer.php
+ * Description: The theme's footer
+ * Date:        1/7/14
  * Programmer:  Liam Kelly
  */
 
-//Includes
-if(!(defined('ABSPATH'))){
-    require_once('../../path.php');
-}
 
-//Scan the hooks dir for plugins
-$plugins = scandir(ABSPATH.'/includes/hooks/system');
-
-//Get rid of the . and ..
-unset($plugins[0]);
-unset($plugins[1]);
-
-//Start loading plugins
-foreach($plugins as $plugin){
-
-    //Ensure this is a php file
-    if(pathinfo($plugin, PATHINFO_EXTENSION) == 'php'){
-
-        //Call each plugin hook
-        include_once(ABSPATH.'/includes/hooks/system/'.$plugin);
-
-
-    }
-
-}
+echo '<p>(c) Copyright 2013-'.date('Y').' William C. Kelly<br /> This software is licensed under the Apache License, Version 2.0</p>';
