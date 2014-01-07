@@ -98,6 +98,8 @@ class db{
                 $this->debug->add_exception($e);
                 $this->debug->add_message('Query to the database has failed.');
 
+                $this->debug->dump();
+
             }
 
             if($this->fail == false){

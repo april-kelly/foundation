@@ -9,28 +9,30 @@
 
 //Includes
 require_once('./path.php');
-require_once(ABSPATH.'includes/models/pdo.php');
+//require_once(ABSPATH.'includes/models/pdo.php');
 require_once(ABSPATH.'includes/models/settings.php');
 require_once(ABSPATH.'includes/models/protected_settings.php');
 require_once(ABSPATH.'includes/models/users.php');
-require_once(ABSPATH.'includes/models/groups.php');
+//require_once(ABSPATH.'includes/models/groups.php');
 require_once(ABSPATH.'includes/models/pages.php');
-require_once(ABSPATH.'includes/models/debug.php');
+//require_once(ABSPATH.'includes/models/debug.php');
 
 //Start the user's session
 if(!(isset($_SESSION))){
     session_start();
 }
 
+$_SESSION['user_id'] = 1;
+
 //Setup the non database requiring system classes
-$debug = new debug;
+//$debug = new debug;
 $set   = new settings;
 $dbc   = new db;
 
 //Setup up the database dependant classes
 $users = new users($dbc);
 $pages = new pages($dbc);
-$groups = new groups;
+//$groups = new groups;
 
 //Fetch the settings
 $settings = $set->fetch();
@@ -42,6 +44,8 @@ if(isset($_REQUEST['p']) && !(empty($_REQUEST['p']))){
     $request = 'home';
 }
 
+/*
+
 //Run system plugins
 include_once(ABSPATH.'includes/controllers/launch_system_plugins.php');
 
@@ -52,21 +56,15 @@ if($settings['plugins'] == true){
     include_once(ABSPATH.'includes/controllers/launch_optional_plugins.php');
 
 }
-
+ */
 //Look up the page
 $page = $pages->lookup($request);
 
-//$users->add_user('Rainbow', 'Dash', 'rd', 'twilight', '0', '0.0.0.0');
-//$users->delete_user('3');
-$users->update_user('1', 'l', 'k', 'kd0hdf', 'df', '9', '0.1.1.1');
-
-$debug->dump();
-
 //Check the user's clearance
-//$auth = $users->clearance_check($_SESSION['user_id'], '');
+$auth = $users->clearance_check($_SESSION['user_id'], '1');
 
 //Always allow display (debugging) *REMOVE BEFORE PRODUCTION*
-$auth = true;
+//$auth = true;
 
 //Start output buffering
 ob_start();
