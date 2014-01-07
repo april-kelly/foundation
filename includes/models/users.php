@@ -57,6 +57,25 @@ class users {
 
     }
 
+    //Login anonymous user
+    public function login_anon(){
+
+        return $this->login($this->protected_settings->anon_user, $this->protected_settings->anon_pass);
+
+    }
+
+    public function setup_session(){
+
+        //Start the user's session
+        if(!(isset($_SESSION))){
+            session_start();
+        }
+
+        $_SESSION['user_id'] = $this->user_id;
+        $_SESSION['name']    = $this->firstname;
+
+    }
+
     //Login function
     public function login($username, $password){
 
@@ -71,7 +90,6 @@ class users {
             ));
 
 
-            $this->debug->quick($users);
             //Make sure there were results
             if(!(empty($users)) && !($users == false)){
 

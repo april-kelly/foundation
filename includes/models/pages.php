@@ -55,7 +55,7 @@ class pages{
         try{
 
             //Look up the page being requested
-            $query = "SELECT * FROM pages WHERE `name` = :name";
+            $query = "SELECT * FROM `pages` NATURAL JOIN `pages-groups` WHERE `name` = :name";
             $handle= $this->dbc->setup($query);
             $pages = $this->dbc->fetch_assoc($handle, array('name' => $name));
 

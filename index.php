@@ -9,30 +9,34 @@
 
 //Includes
 require_once('./path.php');
-//require_once(ABSPATH.'includes/models/pdo.php');
 require_once(ABSPATH.'includes/models/settings.php');
 require_once(ABSPATH.'includes/models/protected_settings.php');
 require_once(ABSPATH.'includes/models/users.php');
-//require_once(ABSPATH.'includes/models/groups.php');
+require_once(ABSPATH.'includes/models/groups.php');
 require_once(ABSPATH.'includes/models/pages.php');
-//require_once(ABSPATH.'includes/models/debug.php');
+require_once(ABSPATH.'includes/models/debug.php');
 
 //Start the user's session
 if(!(isset($_SESSION))){
     session_start();
 }
 
-$_SESSION['user_id'] = 1;
-
 //Setup the non database requiring system classes
-//$debug = new debug;
+$debug = new debug;
 $set   = new settings;
-$dbc   = new db;
 
 //Setup up the database dependant classes
 $users = new users($dbc);
 $pages = new pages($dbc);
-//$groups = new groups;
+
+//Check for login
+if(!(isset($_SESSION['user_id']))){
+
+    //User is NOT logged in, use anonymous user instead
+    $test = $users->login_anon();
+    $users->setup_session();
+
+}
 
 //Fetch the settings
 $settings = $set->fetch();
@@ -45,7 +49,6 @@ if(isset($_REQUEST['p']) && !(empty($_REQUEST['p']))){
 }
 
 /*
-
 //Run system plugins
 include_once(ABSPATH.'includes/controllers/launch_system_plugins.php');
 
@@ -56,17 +59,16 @@ if($settings['plugins'] == true){
     include_once(ABSPATH.'includes/controllers/launch_optional_plugins.php');
 
 }
- */
+*/
+
 //Look up the page
 $page = $pages->lookup($request);
 
 //Check the user's clearance
-$test = $users->login('rd', 'twilight');
-var_dump($test);
-//$auth = $users->clearance_check('0', '2');
+$auth = $users->clearance_check($_SESSION['user_id'], $page['group_id']);
 
 //Always allow display (debugging) *REMOVE BEFORE PRODUCTION*
-$auth = true;
+//$auth = true;
 
 //Start output buffering
 ob_start();

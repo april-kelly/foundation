@@ -15,6 +15,10 @@ class protected_settings{
     public $db_host            = 'localhost';
     public $db_name            = 'foundation';
 
+    //Anonymous user login
+    public $anon_user          = 'local';
+    public $anon_pass          = 'password';
+
     //Fetch Settings
     public function fetch(){
 
