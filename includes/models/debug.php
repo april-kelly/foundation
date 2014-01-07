@@ -119,6 +119,18 @@ class debug{
 
     }
 
+    public function quick($var){
+
+        echo '<b>Quick Debug: </b>'."\r\n";
+        echo '<pre>';
+
+            var_dump($var);
+
+        echo '</pre>';
+        echo '<br />'."\r\n";
+
+    }
+
     //Destructor
     public function __destruct(){
 

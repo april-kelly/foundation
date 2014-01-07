@@ -19,7 +19,7 @@ class users {
     //Define variables
 
         //User data
-            public $index       = null;
+            public $user_id       = null;
             public $firstname   = '';
             public $lastname    = '';
             public $username    = '';
@@ -60,47 +60,62 @@ class users {
     //Login function
     public function login($username, $password){
 
-        /**
-         * This Function logs a user in.
-         */
+        try{
 
-        $this->username = $username;
-        $this->password = $password;
+            //Look up the user being requested
+            $query = "SELECT * FROM  `users` WHERE  `username` =  :username AND `password` =  :password";
+            $handle= $this->dbc->setup($query);
+            $users = $this->dbc->fetch_assoc($handle, array(
+                'username' => $username,
+                'password' => hash('SHA512', $password.$this->protected_settings->salt)
+            ));
 
-        //sanitize inputs
-        //$this->username = $this->dbc->sanitize($this->username);
-        $this->password = hash('SHA512', $this->password);
 
-        //look for user in database
-        $query = "SELECT * FROM users WHERE `username` = '".$this->username."' AND `password` = '".$this->password."'";
-        $results = $this->dbc->query($query);
+            $this->debug->quick($users);
+            //Make sure there were results
+            if(!(empty($users)) && !($users == false)){
 
-        //Make sure the database returned good results
-        if(isset($results[0][0]['index'])){
+                //Count rows returned
+                if(count($users) == '1'){
 
-            //Count rows returned
-            if(count($results) == '1'){
-                $this->index       = $results[0][0]['index'];
-                $this->firstname   = $results[0][0]['firstname'];
-                $this->lastname    = $results[0][0]['lastname'];
-                $this->username    = $results[0][0]['username'];
-                $this->password    = $results[0][0]['password'];
-                $this->login_count = $results[0][0]['login_count'];
-                $this->last_ip     = $results[0][0]['last_ip'];
-                $this->admin       = $results[0][0]['admin'];
+                    $this->user_id     = $users[0]['user_id'];
+                    $this->firstname   = $users[0]['firstname'];
+                    $this->lastname    = $users[0]['lastname'];
+                    $this->username    = $users[0]['username'];
+                    $this->password    = $users[0]['password'];
+                    $this->login_count = $users[0]['login_count'];
+                    $this->last_ip     = $users[0]['last_ip'];
 
-                return true;
+
+                    return true;
+
+                }else{
+
+                    //Bad login, return false
+                    return false;
+
+                }
 
             }else{
 
-                //Bad login, return false
+                //Nothing to send, return false
                 return false;
 
             }
 
-        }else{
+        }catch(PDOException $e){
 
-            //Bad login or error message
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_message('An error was encountered in the users class, add_user() function.');
+
+            }
+
+            //Indicate failure by returning false
             return false;
 
         }

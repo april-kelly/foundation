@@ -61,10 +61,12 @@ if($settings['plugins'] == true){
 $page = $pages->lookup($request);
 
 //Check the user's clearance
-$auth = $users->clearance_check('0', '2');
+$test = $users->login('rd', 'twilight');
+var_dump($test);
+//$auth = $users->clearance_check('0', '2');
 
 //Always allow display (debugging) *REMOVE BEFORE PRODUCTION*
-//$auth = true;
+$auth = true;
 
 //Start output buffering
 ob_start();
