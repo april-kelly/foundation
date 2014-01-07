@@ -61,7 +61,7 @@ if($settings['plugins'] == true){
 $page = $pages->lookup($request);
 
 //Check the user's clearance
-$auth = $users->clearance_check($_SESSION['user_id'], '1');
+$auth = $users->clearance_check('0', '2');
 
 //Always allow display (debugging) *REMOVE BEFORE PRODUCTION*
 //$auth = true;

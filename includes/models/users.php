@@ -110,39 +110,43 @@ class users {
     //Check user clearance
     public function clearance_check($user_id, $group_id){
 
-        //Sanitize inputs
-        $user_id  = $this->dbc->sanitize($user_id);
-        $group_id = $this->dbc->sanitize($group_id);
 
-        //look for user in database
-        $query = "SELECT * FROM  `users-groups` WHERE  `user_id` = '".$user_id."' AND  `group_id` = '".$group_id."'";
-        echo $query;
-        $results = $this->dbc->query($query);
+        try{
 
-        //Make sure the database returned good results
-        if(isset($results[0]['user_id'])){
+            //Look up the user being requested
+            $query = "SELECT * FROM  `users-groups` WHERE  `user_id` =  :user_id AND  `group_id` =  :group_id";
+            $handle= $this->dbc->setup($query);
+            $users = $this->dbc->fetch_assoc($handle, array('user_id' => $user_id, 'group_id' => $group_id));
 
-            //Count rows returned
-            if(count($results) == '1'){
+            //Make sure there were results
+            if(!(empty($users)) && !($users == false)){
 
-                //Cleared
+                //User checked out
                 return true;
 
             }else{
 
-                //SPY!?!
+                //Nothing to send, return false
                 return false;
 
             }
 
-        }else{
+        }catch(PDOException $e){
 
-            //Bad login or error message
+            //Ok, something went wrong, let's handle it
+
+            //Let the debugger now about this (if enabled)
+            if(isset($settings['debug']) && $settings["debug"] == true){
+
+                $this->debug->add_exception($e);
+                $this->debug->add_message('An error was encountered in the users class, add_user() function.');
+
+            }
+
+            //Indicate failure by returning false
             return false;
 
         }
-
-
 
     }
 
