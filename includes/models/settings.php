@@ -49,6 +49,7 @@ class settings {
     public $theme                                   =   'default';                 //Sets the theme
     public $plugins                                 =   true;                      //Enables optional plugins
     public $debug                                   =   true;                      //Enables debugging
+    public $page_title                              =   'Foundation Framework';    //Page title
 
     //Constructor
     public function __construct(){
