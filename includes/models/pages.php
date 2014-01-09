@@ -38,6 +38,7 @@ class pages{
         public $page_id;
         public $name;
         public $path;
+        public $div_id;
 
         //Control
         public $dbc;
@@ -83,6 +84,7 @@ class pages{
                 $this->page_id = $pages[0]["page_id"];
                 $this->name    = $pages[0]["name"];
                 $this->path    = $pages[0]["path"];
+                $this->div_id  = $pages[0]["div_id"];
 
                 //return the first result only
                 return $pages[0];
@@ -114,12 +116,12 @@ class pages{
     }
 
     //Add a page
-    public function add_page($name, $path){
+    public function add_page($name, $path, $div_id){
 
         try{
 
             //Setup Insert
-            $query = "INSERT INTO pages VALUES(:page_id, :name, :path)";
+            $query = "INSERT INTO pages VALUES(:page_id, :name, :path, :div_id)";
             $handle= $this->dbc->setup($query);
 
             //Define Parameters
@@ -127,6 +129,7 @@ class pages{
                  'page_id' => null,
                  'name'    => $name,
                  'path'    => $path,
+                 'div_id'  => $div_id,
             );
 
             //Run Insert
@@ -155,7 +158,7 @@ class pages{
     }
 
     //Change a page
-    public function update_page($page_id, $name, $path){
+    public function update_page($page_id, $name, $path, $div_id){
 
         //Handle empty parameters
         if(empty($name)){
@@ -173,7 +176,7 @@ class pages{
         try{
 
             //Setup Insert
-            $query = "UPDATE pages SET `name` = :name, `path` = :path WHERE `page_id` = :page_id ";
+            $query = "UPDATE pages SET `name` = :name, `path` = :path, `div_id` = :div_id WHERE `page_id` = :page_id ";
             $handle= $this->dbc->setup($query);
 
             //Define Parameters
@@ -181,6 +184,7 @@ class pages{
                 'page_id' => $page_id,
                 'name'    => $name,
                 'path'    => $path,
+                'div_id'  => $div_id,
             );
 
             //Run Insert

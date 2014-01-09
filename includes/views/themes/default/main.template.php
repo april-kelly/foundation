@@ -11,15 +11,7 @@
 
         <title><?php echo $settings['page_title']; ?></title>
 
-        <style>
-
-            <?php
-
-                echo file_get_contents(ABSPATH.'includes/views/themes/'.$theme->dir_name.'/styles/styles.css');
-
-            ?>
-
-        </style>
+        <link href="./includes/views/themes/<?php echo $theme->dir_name ?>/styles/styles.css" rel="stylesheet"/>
 
     </head>
 
@@ -35,7 +27,7 @@
 
         </div>
 
-        <div id="main">
+        <div id="<?php echo $page['div_id']; ?>">
 
             <?php
 
