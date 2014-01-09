@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2013 William Caleb Kelly
+ * Copyright 2014 William Caleb Kelly
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
