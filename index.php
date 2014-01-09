@@ -23,6 +23,8 @@
  * Date:        12/24/13
  */
 
+$start_time = microtime();
+
 //Includes
 require_once('./path.php');
 require_once(ABSPATH.'includes/models/settings.php');
@@ -67,7 +69,7 @@ if(isset($_REQUEST['p']) && !(empty($_REQUEST['p']))){
     $request = 'home';
 }
 
-/*
+
 //Run system plugins
 include_once(ABSPATH.'includes/controllers/launch_system_plugins.php');
 
@@ -78,16 +80,13 @@ if($settings['plugins'] == true){
     include_once(ABSPATH.'includes/controllers/launch_optional_plugins.php');
 
 }
-*/
+
 
 //Look up the page
 $page = $pages->lookup($request);
 
 //Check the user's clearance
 $auth = $users->clearance_check($_SESSION['user_id'], $page['group_id']);
-
-//Always allow display (debugging) *REMOVE BEFORE PRODUCTION*
-//$auth = true;
 
 //Start output buffering
 ob_start();
@@ -99,7 +98,7 @@ ob_start();
         if(isset($page['path']) && file_exists(ABSPATH.'includes/views/themes/'.$settings['theme'].'/'.$page['path'])){
 
             //Include the requested page
-            include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/'.$page['path']);
+            include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/main.template.php');
 
         }else{
 
@@ -118,6 +117,10 @@ ob_start();
         include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/errors/403.php');
 
     }
+
+//Time Debugging
+$end_time = microtime();
+echo $end_time - $start_time;
 
 //Conclude output buffer
 $ob = ob_get_contents();

@@ -17,10 +17,11 @@
  */
  
  /**
- * Name:        
- * Description: 
- * Date:        1/7/14
+ * Name:        Foundation installer
+ * Description: Installs foundation
+ * Date:        1/8/14
  * Programmer:  Liam Kelly
  */
 
-echo 'this is a nav bar';
+
+ 

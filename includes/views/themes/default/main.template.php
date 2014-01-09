@@ -10,7 +10,7 @@
 
             <?php
 
-                //include_once('./nav.php');
+                include_once(ABSPATH.'includes/views/themes/default/nav.php');
 
             ?>
 
@@ -21,7 +21,7 @@
             <?php
 
                 //include_once('./nav.php');
-
+                $debug->quick($page);
             ?>
 
         </div>
