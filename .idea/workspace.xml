@@ -34,10 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="nav.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/views/themes/default/nav.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="14" selection-start="598" selection-end="598" vertical-scroll-proportion="0.87383175" vertical-offset="34" max-vertical-offset="731">
+            <state line="35" column="14" selection-start="598" selection-end="598" vertical-scroll-proportion="-6.9259257" vertical-offset="34" max-vertical-offset="731">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/controllers/install.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="1" selection-start="751" selection-end="751" vertical-scroll-proportion="0.58536583" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -75,7 +84,6 @@
         <option value="$PROJECT_DIR$/includes/models/groups.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/includes/views/themes/default/login.php" />
-        <option value="$PROJECT_DIR$/includes/controllers/install.php" />
         <option value="$PROJECT_DIR$/includes/views/themes/default/config/theme_config.php" />
         <option value="$PROJECT_DIR$/style_handler.php" />
         <option value="$PROJECT_DIR$/includes/models/settings.php" />
@@ -88,6 +96,7 @@
         <option value="$PROJECT_DIR$/includes/views/themes/default/styles/styles.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/views/themes/default/nav.php" />
+        <option value="$PROJECT_DIR$/includes/controllers/install.php" />
       </list>
     </option>
   </component>
@@ -155,18 +164,6 @@
               <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -179,6 +176,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,13 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/controllers/install.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="742" selection-end="742" vertical-scroll-proportion="0.6097561" vertical-offset="0" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/path.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="3" selection-start="606" selection-end="606" vertical-scroll-proportion="0.048780486" vertical-offset="0" max-vertical-offset="697">
@@ -648,9 +642,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controllers/build_tables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="4" selection-start="891" selection-end="891" vertical-scroll-proportion="0.31420374" vertical-offset="376" max-vertical-offset="2533">
+          <folding>
+            <element signature="e#7#606#0" expanded="true" />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+            <marker date="1389322133588" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..IF..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/themes/default/nav.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="14" selection-start="598" selection-end="598" vertical-scroll-proportion="0.87383175" vertical-offset="34" max-vertical-offset="731">
+        <state line="35" column="14" selection-start="598" selection-end="598" vertical-scroll-proportion="-6.9259257" vertical-offset="34" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/controllers/install.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="1" selection-start="751" selection-end="751" vertical-scroll-proportion="0.58536583" vertical-offset="0" max-vertical-offset="697">
           <folding />
         </state>
       </provider>

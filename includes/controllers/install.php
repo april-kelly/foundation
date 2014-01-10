@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2014 William Caleb Kelly
+ * Copyright ${year} William Caleb Kelly
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,9 @@
  */
  
  /**
- * Name:        Foundation installer
- * Description: Installs foundation
- * Date:        1/8/14
+ * Name:        Installation
+ * Description: Installs the Foundation Framework
+ * Date:        1/9/14
  * Programmer:  Liam Kelly
  */
-
-
  
