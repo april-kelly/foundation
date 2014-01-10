@@ -120,7 +120,8 @@ ob_start();
 
 //Time Debugging
 $end_time = microtime();
-echo $end_time - $start_time;
+$time = $end_time - $start_time;
+echo 'Page built in: '.$time.' sec.';
 
 //Conclude output buffer
 $ob = ob_get_contents();

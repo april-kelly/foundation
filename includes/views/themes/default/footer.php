@@ -24,4 +24,4 @@
  */
 
 
-echo '<p>(c) Copyright 2013-'.date('Y').' William C. Kelly<br /> This software is licensed under the Apache License, Version 2.0</p>';
+echo '<p>(C) Copyright 2013-'.date('Y').' William C. Kelly<br /> This software is licensed under the Apache License, Version 2.0</p>';
