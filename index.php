@@ -127,7 +127,7 @@ ob_start();
         //DO NOT include the requested page
 
         //Use, the 403 page instead
-        include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/errors/403.php');
+        include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/errors/404.php');
 
     }
 

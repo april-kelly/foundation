@@ -27,8 +27,26 @@
 header($_SERVER['SERVER_PROTOCOL'].'403 Forbidden');
 
 ?>
+<html>
 
-<h3>404, Not Found</h3>
+<head>
+
+    <title>Error 404 | <?php echo $settings['page_title']; ?></title>
+
+    <link href="./includes/views/themes/<?php echo $theme->dir_name ?>/styles/styles.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<h1>404, Resource does not exist</h1>
 <p>
-    Resource does not exist.
+
+<h3>The file or page you requested does not exist or you are not authorized to access it. </h3>
+<img src="./includes/views/themes/<?php echo $theme->dir_name; ?>/images/404.jpg" alt="This 404 page, now 20% cooler" title="Rainbow Dash" />
+
 </p>
+
+</body>
+
+</html>
