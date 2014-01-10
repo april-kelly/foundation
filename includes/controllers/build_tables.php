@@ -29,7 +29,7 @@ if(!(defined('ABSPATH'))){
     require_once('../../path.php');
 
 }
-require_once(ABSPATH.'models/pdo.php');
+require_once(ABSPATH.'includes/models/pdo.php');
 
 function build_tables(){
 

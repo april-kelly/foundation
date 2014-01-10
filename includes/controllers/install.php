@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright ${year} William Caleb Kelly
+ * Copyright 2014 William Caleb Kelly
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,4 +22,19 @@
  * Date:        1/9/14
  * Programmer:  Liam Kelly
  */
+
+//Includes
+require_once('../../path.php');
+require_once(ABSPATH.'includes/models/settings.php');
+require_once(ABSPATH.'includes/models/protected_settings.php');
+require_once(ABSPATH.'includes/models/debug.php');
+require_once(ABSPATH.'includes/models/build_tables.php');
+
+//Build the tables
+build_tables();
+
+//Include after db setup
+require_once(ABSPATH.'includes/models/users.php');
+require_once(ABSPATH.'includes/models/groups.php');
+require_once(ABSPATH.'includes/models/pages.php');
  

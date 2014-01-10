@@ -46,6 +46,22 @@ $set   = new settings;
 //Setup the database
 $dbc   = new db;
 
+//Fetch the settings
+$settings = $set->fetch();
+
+//Include the theme config
+require_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/config/theme_config.php');
+$theme  = new theme_config;
+
+//Make sure database connection did not fail
+if($dbc->fail == true){
+
+    //It failed, send user to 505 page
+    include_once(ABSPATH.'includes/views/themes/'.$settings['theme'].'/errors/505.php');
+
+}else{
+
+
 //Setup up the database dependant classes
 $users = new users($dbc);
 $pages = new pages($dbc);
@@ -58,9 +74,6 @@ if(!(isset($_SESSION['user_id']))){
     $users->setup_session();
 
 }
-
-//Fetch the settings
-$settings = $set->fetch();
 
 //Get the user's page request
 if(isset($_REQUEST['p']) && !(empty($_REQUEST['p']))){
@@ -129,3 +142,6 @@ ob_end_clean();
 
 //Send user the page
 echo $ob;
+
+//End of db fail test
+}

@@ -50,6 +50,9 @@ class db{
         $set = new protected_settings();
         $this->settings = $set->fetch();
 
+        //Setup Debugging
+        $this->debug = new debug;
+
         //Setup the database credentials
         $this->db_name = $this->settings['db_name'];
         $this->db_host = $this->settings['db_host'];
@@ -57,10 +60,18 @@ class db{
         $this->db_pass = $this->settings['db_pass'];
 
         //Connect to the database
-        $this->connect();
+        $status = $this->connect();
 
-        //Setup Debugging
-        $this->debug = new debug;
+        //If connection failed
+        if($status == false){
+
+            return false;
+
+        }else{
+
+            return true;
+
+        }
 
     }
 
@@ -73,6 +84,13 @@ class db{
             $this->dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         }catch(PDOException $e){
+
+            if(!(is_object($e))){
+
+                //Connection to db failed
+                $this->fail = true;
+                return false;
+            }
 
             $this->errors = $this->errors."\r\n".$e->getMessage();
             $this->fail = true;
