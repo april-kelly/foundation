@@ -37,7 +37,7 @@
       <file leaf-file-name="505.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/views/themes/default/errors/505.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="17" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.68292683" vertical-offset="306" max-vertical-offset="1003">
+            <state line="46" column="91" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.7374462" vertical-offset="268" max-vertical-offset="1020">
               <folding>
                 <element signature="e#7#606#0" expanded="true" />
               </folding>
@@ -757,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/views/themes/default/errors/505.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="17" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.68292683" vertical-offset="306" max-vertical-offset="1003">
+        <state line="46" column="91" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.7374462" vertical-offset="268" max-vertical-offset="1020">
           <folding>
             <element signature="e#7#606#0" expanded="true" />
           </folding>

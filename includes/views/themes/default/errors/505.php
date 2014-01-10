@@ -44,7 +44,8 @@ header($_SERVER['SERVER_PROTOCOL'].'505 Internal Server Error');
         <p>
             <h3>We are having some issues with our service right now. Please come back later.</h3>
             <img src="./includes/views/themes/<?php echo $theme->dir_name; ?>/images/derpy.png" alt="Derpy Hooves" title="Derpy Hooves"/>
-            <br/>If you see this pony, tell her a datacenter is no place for muffins.
+            <br/>If you see this pony, tell her a datacenter is no place for muffins.<br />
+            Credit for this image goes to <a href="http://www.deviantart.com/art/Derpy-404-326148742">aman692</a> on DeviantArt.
         </p>
 
     </body>
