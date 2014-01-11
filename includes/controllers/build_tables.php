@@ -36,8 +36,11 @@ function build_tables(){
     //Setup database connection
     $dbc = new db;
 
+    //Make sure connection was a success
+    if($dbc->fail == false){
+
     //Create groups table
-        $dbc->query("
+    $dbc->query("
     CREATE TABLE IF NOT EXISTS `groups` (
       `group_id` int(11) NOT NULL AUTO_INCREMENT,
       `name` text NOT NULL,
@@ -46,9 +49,9 @@ function build_tables(){
     ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
     ");
 
-    //Create pages table
-        $dbc->query("
-    CREATE TABLE IF NOT EXISTS `pages` (
+
+        //Create pages table
+        $dbc->query("CREATE TABLE IF NOT EXISTS `pages` (
       `page_id` int(11) NOT NULL AUTO_INCREMENT,
       `name` varchar(255) NOT NULL,
       `path` varchar(255) NOT NULL,
@@ -57,7 +60,7 @@ function build_tables(){
     ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
     ");
 
-    //Create pages-groups
+        //Create pages-groups
         $dbc->query("
     CREATE TABLE IF NOT EXISTS `pages-groups` (
       `page_id` int(11) NOT NULL,
@@ -65,7 +68,7 @@ function build_tables(){
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
     ");
 
-    //Create users table
+        //Create users table
         $dbc->query("
     CREATE TABLE IF NOT EXISTS `users` (
       `user_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,18 +82,18 @@ function build_tables(){
     ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
     ");
 
-    //Create users-groups table
+        //Create users-groups table
         $dbc->query("
     CREATE TABLE IF NOT EXISTS `users-groups` (
       `user_id` int(11) NOT NULL,
       `group_id` int(11) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
     ");
-    //Setup database connection
-    $dbc = new db;
+        //Setup database connection
+        $dbc = new db;
 
-    //Create groups table
-    $dbc->query("
+        //Create groups table
+        $dbc->query("
     CREATE TABLE IF NOT EXISTS `groups` (
       `group_id` int(11) NOT NULL AUTO_INCREMENT,
       `name` text NOT NULL,
@@ -99,8 +102,8 @@ function build_tables(){
     ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
     ");
 
-    //Create pages table
-    $dbc->query("
+        //Create pages table
+        $dbc->query("
     CREATE TABLE IF NOT EXISTS `pages` (
       `page_id` int(11) NOT NULL AUTO_INCREMENT,
       `name` varchar(255) NOT NULL,
@@ -110,16 +113,16 @@ function build_tables(){
     ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
     ");
 
-    //Create pages-groups
-    $dbc->query("
+        //Create pages-groups
+        $dbc->query("
     CREATE TABLE IF NOT EXISTS `pages-groups` (
       `page_id` int(11) NOT NULL,
       `group_id` int(11) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
     ");
 
-    //Create users table
-    $dbc->query("
+        //Create users table
+        $dbc->query("
     CREATE TABLE IF NOT EXISTS `users` (
       `user_id` int(11) NOT NULL AUTO_INCREMENT,
       `firstname` varchar(255) NOT NULL,
@@ -132,12 +135,20 @@ function build_tables(){
     ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
     ");
 
-    //Create users-groups table
-    $dbc->query("
+        //Create users-groups table
+        $dbc->query("
     CREATE TABLE IF NOT EXISTS `users-groups` (
       `user_id` int(11) NOT NULL,
       `group_id` int(11) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
     ");
+
+
+    }else{
+
+        echo 'The connection to the database failed, please ensure it exists and that your connection credentials are correct.';
+
+    }
+
 
 }

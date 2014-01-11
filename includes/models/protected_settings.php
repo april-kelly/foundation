@@ -30,7 +30,7 @@ class protected_settings{
     public $db_user            = 'root';
     public $db_pass            = 'kd0hdf';
     public $db_host            = 'localhost';
-    public $db_name            = 'foundation';
+    public $db_name            = 'foundation2';
 
     //Anonymous user login
     public $anon_user          = 'local';

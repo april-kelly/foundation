@@ -28,7 +28,7 @@ require_once('../../path.php');
 require_once(ABSPATH.'includes/models/settings.php');
 require_once(ABSPATH.'includes/models/protected_settings.php');
 require_once(ABSPATH.'includes/models/debug.php');
-require_once(ABSPATH.'includes/models/build_tables.php');
+require_once(ABSPATH.'includes/controllers/build_tables.php');
 
 //Build the tables
 build_tables();

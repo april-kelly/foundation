@@ -23,7 +23,7 @@
  * Date:        12/24/13
  */
 
-$start_time = microtime();
+$start_time = microtime(true);
 
 //Includes
 require_once('./path.php');
@@ -132,7 +132,7 @@ ob_start();
     }
 
 //Time Debugging
-$end_time = microtime();
+$end_time = microtime(true);
 $time = $end_time - $start_time;
 echo 'Page built in: '.$time.' sec.';
 
